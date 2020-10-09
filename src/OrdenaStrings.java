@@ -69,11 +69,21 @@ public class OrdenaStrings {
 		});
 		
 		//Lambda do exemplo 4
-		System.out.println("Exemplo 7 --------------");
+//		System.out.println("Exemplo 7 --------------");
+//		
+//		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+//		System.out.println(palavras);
+//		palavras.forEach(s -> System.out.println(s));
 		
-		palavras.sort((s1, s2) -> Integer.compare(s1.length(), s2.length()));
+		//Lambda do exemplo 5
+		System.out.println("Exemplo 8 --------------");
+		palavras.sort((Comparator.comparing(s -> s.length())));
 		System.out.println(palavras);
-		palavras.forEach(s -> System.out.println(s));
+
+		//Lambda do exemplo 6
+		System.out.println("Exemplo 9 --------------");
+		palavras.sort((Comparator.comparing(String::length)));
+		System.out.println(palavras);		
 		
 	}
 	
