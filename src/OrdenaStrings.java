@@ -85,6 +85,11 @@ public class OrdenaStrings {
 		palavras.sort((Comparator.comparing(String::length)));
 		System.out.println(palavras);		
 		
+		//Method Reference
+		System.out.println("Exemplo 10 --------------");
+		Consumer<String> impressor = System.out::println;
+		palavras.forEach(impressor);
+		
 	}
 	
 }
