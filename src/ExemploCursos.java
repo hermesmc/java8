@@ -33,7 +33,21 @@ public class ExemploCursos {
 		cursos.forEach(c -> System.out.println(c.getNome()));
 		System.out.println("------------------------------------");
 		cursos.stream()
+			// lambda
 			.filter(c -> c.getAlunos() >= 100)
-			.forEach(c -> System.out.println(c.getNome()));		
+			//.forEach(c -> System.out.println(c.getNome()));
+			//reference
+			.map(Curso::getAlunos)
+			.forEach(System.out::println);
+		// ------------------------------------------
+		
+			int sum = cursos.stream()
+			.filter(c -> c.getAlunos() >= 100)
+			.mapToInt(Curso::getAlunos)
+			.sum();
+			System.out.println("TOTAL: ");
+			System.out.println(sum);
+		
+		
 	}
 }
